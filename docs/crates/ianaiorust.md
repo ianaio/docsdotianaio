@@ -1,6 +1,7 @@
 ---
 id: ianaiorust
 title: IanaIO Rust Crates
+slug: /
 ---
 # IanaIO Rust Crates
 

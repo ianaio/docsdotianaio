@@ -53,15 +53,6 @@ const config = {
               label: 'SmartEditOS-Developer-UX-Layer-for-Conversational-AI',
               to: '/projects/smarteditos-developer-ux-layer',
             },
-            {
-              type: 'html',
-              value: '<div style="padding: 0.5rem 1rem; font-weight: bold;">Crates</div>',
-              className: 'navbar__separator',
-            },
-            {
-              label: 'IanaIO Rust Crates',
-              to: '/crates/ianaiorust',
-            },
           ],
         },
         { to: '/technology', label: 'Technology', position: 'left' },
