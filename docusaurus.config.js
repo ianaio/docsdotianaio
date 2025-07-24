@@ -35,26 +35,6 @@ const config = {
           label: 'Home',
           position: 'left',
         },
-        {
-          type: 'dropdown',
-          label: 'Documentation',
-          position: 'left',
-          items: [
-            {
-              type: 'html',
-              value: '<div style="padding: 0.5rem 1rem; font-weight: bold;">Projects</div>',
-              className: 'navbar__separator',
-            },
-            {
-              label: 'Tech-Corporate-Credibility-Test',
-              to: '/projects/tech-corporate-credibility-test',
-            },
-            {
-              label: 'SmartEditOS-Developer-UX-Layer-for-Conversational-AI',
-              to: '/projects/smarteditos-developer-ux-layer',
-            },
-          ],
-        },
         { to: '/technology', label: 'Technology', position: 'left' },
         { to: '/methodology', label: 'Methodology', position: 'left' },
         { to: '/terminology', label: 'Terminology', position: 'left' },
