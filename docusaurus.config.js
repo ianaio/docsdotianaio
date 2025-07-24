@@ -1,26 +1,15 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
-
-// See: https://github.com/facebook/docusaurus/issues/8940 
 const lightCodeTheme = require('prism-react-renderer').themes.github;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'IanaIO - DOCUMENTS',
-  tagline: ' Documents - Technology - Methodology - Terminology - Showcase - Resources ',
+  tagline: 'Technology - Methodology - Terminology - Showcase - Resources',
   url: 'https://docs.iana.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -46,12 +35,19 @@ const config = {
           label: 'Home',
           position: 'left',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
           type: 'dropdown',
-          label: 'docs.rs',
-          position: 'right',
+          label: 'Documentation',
+          position: 'left',
           items: [
+            {
+              label: 'Tech-Corporate-Credibility-Test',
+              to: '/docs/projects/tech-corporate-credibility-test',
+            },
+            {
+              label: 'SmartEditOS-Developer-UX-Layer-for-Conversational-AI',
+              to: '/docs/projects/smarteditos-developer-ux-layer',
+            },
             {
               label: 'ianaio',
               href: 'https://docs.rs/ianaio',
@@ -95,9 +91,15 @@ const config = {
             {
               label: 'worker',
               href: 'https://docs.rs/ianaio-worker/',
-            }
+            },
           ],
         },
+        { to: '/docs/technology', label: 'Technology', position: 'left' },
+        { to: '/docs/methodology', label: 'Methodology', position: 'left' },
+        { to: '/docs/terminology', label: 'Terminology', position: 'left' },
+        { to: '/docs/showcase', label: 'Showcase', position: 'left' },
+        { to: '/docs/resources', label: 'Resources', position: 'left' },
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/ianaio/ianaio',
           label: 'GitHub',
@@ -119,12 +121,12 @@ const config = {
             {
               alt: 'AI <3 IanaIO Logo',
               label: 'X',
-              href: 'https://x.com/_ianaio', 
+              href: 'https://x.com/_ianaio',
               width: 25,
               height: 25,
             },
           ],
-	},
+        },
         {
           title: 'Community',
           items: [
@@ -137,14 +139,8 @@ const config = {
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/ianaio/ianaio',
-            },
+            { label: 'Blog', to: '/blog' },
+            { label: 'GitHub', href: 'https://github.com/ianaio/ianaio' },
           ],
         },
       ],
@@ -155,7 +151,7 @@ const config = {
         width: 27.83,
         height: 32,
       },
-      copyright: `Copyright © ${new Date().getFullYear()} IanaIO, Inc.`, // You can also put own HTML here
+      copyright: `Copyright © ${new Date().getFullYear()} IanaIO, Inc.`,
     },
     prism: {
       theme: lightCodeTheme,
@@ -166,27 +162,21 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/ianaio/website/',
+          editUrl: 'https://github.com/ianaio/website/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/ianaio/website/',
+          editUrl: 'https://github.com/ianaio/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
 };
 
 module.exports = config;
-
