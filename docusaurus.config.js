@@ -42,11 +42,11 @@ const config = {
           items: [
             {
               label: 'Tech-Corporate-Credibility-Test',
-              to: '/docs/projects/tech-corporate-credibility-test',
+              to: '/projects/tech-corporate-credibility-test', // Removed /docs/
             },
             {
               label: 'SmartEditOS-Developer-UX-Layer-for-Conversational-AI',
-              to: '/docs/projects/smarteditos-developer-ux-layer',
+              to: '/projects/smarteditos-developer-ux-layer', // Removed /docs/
             },
             {
               label: 'ianaio',
@@ -94,11 +94,11 @@ const config = {
             },
           ],
         },
-        { to: '/docs/technology', label: 'Technology', position: 'left' },
-        { to: '/docs/methodology', label: 'Methodology', position: 'left' },
-        { to: '/docs/terminology', label: 'Terminology', position: 'left' },
-        { to: '/docs/showcase', label: 'Showcase', position: 'left' },
-        { to: '/docs/resources', label: 'Resources', position: 'left' },
+        { to: '/technology', label: 'Technology', position: 'left' }, // Removed /docs/
+        { to: '/methodology', label: 'Methodology', position: 'left' }, // Removed /docs/
+        { to: '/terminology', label: 'Terminology', position: 'left' }, // Removed /docs/
+        { to: '/showcase', label: 'Showcase', position: 'left' }, // Removed /docs/
+        { to: '/resources', label: 'Resources', position: 'left' }, // Removed /docs/
         { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/ianaio/ianaio',
@@ -166,6 +166,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/ianaio/website/',
+          routeBasePath: '/', // Serve docs at root
         },
         blog: {
           showReadingTime: true,
