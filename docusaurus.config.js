@@ -41,64 +41,34 @@ const config = {
           position: 'left',
           items: [
             {
+              type: 'html',
+              value: '<div style="padding: 0.5rem 1rem; font-weight: bold;">Projects</div>',
+              className: 'navbar__separator',
+            },
+            {
               label: 'Tech-Corporate-Credibility-Test',
-              to: '/projects/tech-corporate-credibility-test', // Removed /docs/
+              to: '/projects/tech-corporate-credibility-test',
             },
             {
               label: 'SmartEditOS-Developer-UX-Layer-for-Conversational-AI',
-              to: '/projects/smarteditos-developer-ux-layer', // Removed /docs/
+              to: '/projects/smarteditos-developer-ux-layer',
             },
             {
-              label: 'ianaio',
-              href: 'https://docs.rs/ianaio',
+              type: 'html',
+              value: '<div style="padding: 0.5rem 1rem; font-weight: bold;">Crates</div>',
+              className: 'navbar__separator',
             },
             {
-              label: 'dialogs',
-              href: 'https://docs.rs/ianaio-dialogs/',
-            },
-            {
-              label: 'events',
-              href: 'https://docs.rs/ianaio-events/',
-            },
-            {
-              label: 'file',
-              href: 'https://docs.rs/ianaio-file/',
-            },
-            {
-              label: 'history',
-              href: 'https://docs.rs/ianaio-history/',
-            },
-            {
-              label: 'net',
-              href: 'https://docs.rs/ianaio-net/',
-            },
-            {
-              label: 'render',
-              href: 'https://docs.rs/ianaio-render/',
-            },
-            {
-              label: 'storage',
-              href: 'https://docs.rs/ianaio-storage/',
-            },
-            {
-              label: 'timers',
-              href: 'https://docs.rs/ianaio-timers/',
-            },
-            {
-              label: 'utils',
-              href: 'https://docs.rs/ianaio-utils/',
-            },
-            {
-              label: 'worker',
-              href: 'https://docs.rs/ianaio-worker/',
+              label: 'IanaIO Rust Crates',
+              to: '/crates/ianaiorust',
             },
           ],
         },
-        { to: '/technology', label: 'Technology', position: 'left' }, // Removed /docs/
-        { to: '/methodology', label: 'Methodology', position: 'left' }, // Removed /docs/
-        { to: '/terminology', label: 'Terminology', position: 'left' }, // Removed /docs/
-        { to: '/showcase', label: 'Showcase', position: 'left' }, // Removed /docs/
-        { to: '/resources', label: 'Resources', position: 'left' }, // Removed /docs/
+        { to: '/technology', label: 'Technology', position: 'left' },
+        { to: '/methodology', label: 'Methodology', position: 'left' },
+        { to: '/terminology', label: 'Terminology', position: 'left' },
+        { to: '/showcase', label: 'Showcase', position: 'left' },
+        { to: '/resources', label: 'Resources', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/ianaio/ianaio',
@@ -166,7 +136,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/ianaio/website/',
-          routeBasePath: '/', // Serve docs at root
+          routeBasePath: '/',
         },
         blog: {
           showReadingTime: true,

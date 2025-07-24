@@ -2,10 +2,17 @@ module.exports = {
   mainSidebar: [
     {
       type: 'category',
-      label: 'Documentation',
+      label: 'Projects', // Renamed from 'Documentation'
       items: [
         'projects/tech-corporate-credibility-test',
         'projects/smarteditos-developer-ux-layer',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Crates',
+      items: [
+        'crates/ianaiorust',
       ],
     },
     {

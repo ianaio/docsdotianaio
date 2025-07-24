@@ -59,3 +59,14 @@ html[data-theme='dark'] .hero__subtitle {
   width: 24px;
 }
 
+.navbar__separator {
+  border-top: 1px solid var(--ifm-color-gray-300);
+  margin: 0.5rem 0;
+  color: var(--ifm-color-gray-700);
+  font-size: 0.9rem;
+}
+
+html[data-theme='dark'] .navbar__separator {
+  border-top: 1px solid var(--ifm-color-gray-700);
+  color: var(--ifm-color-gray-300);
+}
