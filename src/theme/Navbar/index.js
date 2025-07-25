@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
-import Link from '@docusaurus/Link';
+import { useHistory } from '@docusaurus/router';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import NavbarItem from '@theme/NavbarItem';
 import styles from './styles.module.css';
@@ -10,7 +10,11 @@ function CustomNavbar() {
   const { logo, title, items } = navbar;
   const logoSrc = useBaseUrl(logo.src);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileOpen, setMobileOpen] = useState(false);
   const navbarRef = useRef(null);
+  const dropdownRef = useRef(null);
+  const history = useHistory();
+  let timeoutId = null;
 
   const dropdownItems = [
     { label: 'IanaIO', href: 'https://www.iana.io' },
@@ -24,37 +28,96 @@ function CustomNavbar() {
     }
   }, []);
 
+  // Force re-render after hydration
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsDropdownOpen((prev) => prev); // Trigger re-render
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Handle mouse enter/leave with timeout
+  const handleMouseEnter = () => {
+    if (timeoutId) clearTimeout(timeoutId);
+    setIsDropdownOpen(true);
+  };
+  const handleMouseLeave = () => {
+    timeoutId = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 200); // Delay to allow moving to dropdown
+  };
+  const handleDropdownMouseEnter = () => {
+    if (timeoutId) clearTimeout(timeoutId);
+    setIsDropdownOpen(true);
+  };
+  const handleDropdownMouseLeave = () => {
+    timeoutId = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 200);
+  };
+
+  // Handle tap for mobile
+  const handleMobileToggle = () => {
+    setMobileOpen((prev) => !prev);
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  // Handle logo click for client-side routing
+  const handleLogoClick = () => {
+    if (history.location.pathname !== '/') {
+      history.push('/');
+    }
+  };
+
   return (
     <nav className="navbar navbar--fixed-top" ref={navbarRef}>
       <div className="navbar__inner">
         <div
           className="navbar__brand"
-          onMouseEnter={() => setIsDropdownOpen(true)}
-          onMouseLeave={() => setIsDropdownOpen(false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleMobileToggle}
         >
-          <Link className="navbar__logo" href={logo.href}>
+          <div
+            className="navbar__logo"
+            onClick={handleLogoClick}
+            style={{ cursor: 'pointer' }}
+          >
             <img
               src={logoSrc}
               alt={logo.alt}
               width={logo.width}
               height={logo.height}
             />
-          </Link>
+          </div>
           {title && (
-            <Link className="navbar__title text--truncate" href={logo.href}>
+            <div
+              className="navbar__title text--truncate"
+              onClick={handleLogoClick}
+              style={{ cursor: 'pointer' }}
+            >
               {title}
-            </Link>
+            </div>
           )}
-          {isDropdownOpen && (
-            <div className={styles.dropdown}>
+          {(isDropdownOpen || isMobileOpen) && (
+            <div
+              className={styles.dropdown}
+              ref={dropdownRef}
+              onMouseEnter={handleDropdownMouseEnter}
+              onMouseLeave={handleDropdownMouseLeave}
+            >
               {dropdownItems.map((item, index) => (
-                <Link
+                <a
                   key={index}
                   className={styles.dropdownItem}
                   href={item.href}
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    setMobileOpen(false);
+                  }}
                 >
                   {item.label}
-                </Link>
+                </a>
               ))}
             </div>
           )}

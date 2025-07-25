@@ -6,7 +6,7 @@
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-md);
-  z-index: var(--ifm-z-index-dropdown);
+  z-index: 1000; /* High z-index to ensure clickability */
   min-width: 150px;
   padding: 0.5rem 0;
   margin-top: 0.25rem;
@@ -25,9 +25,14 @@
   color: var(--ifm-navbar-link-hover-color);
 }
 
-/* Disable hover on mobile/touch devices */
+/* Ensure dropdown is clickable on mobile */
 @media (hover: none) {
   .dropdown {
-    display: none; /* Prevent hover dropdown on touch devices */
+    position: static;
+    margin-top: 0;
+    border: none;
+    box-shadow: none;
+    background-color: var(--ifm-background-surface-color);
+    z-index: auto; /* Reset z-index for mobile */
   }
 }
