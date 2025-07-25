@@ -1,8 +1,13 @@
 module.exports = {
   mainSidebar: [
     {
+      type: 'doc',
+      id: 'home',
+      label: 'Home',
+    },
+    {
       type: 'category',
-      label: 'Projects', // Renamed from 'Documentation'
+      label: 'Projects',
       items: [
         'projects/tech-corporate-credibility-test',
         'projects/smarteditos-developer-ux-layer',
@@ -17,27 +22,27 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'technology/index',
+      id: 'technology/technology',
       label: 'Technology',
     },
     {
       type: 'doc',
-      id: 'methodology/index',
+      id: 'methodology/methodology',
       label: 'Methodology',
     },
     {
       type: 'doc',
-      id: 'terminology/index',
+      id: 'terminology/terminology',
       label: 'Terminology',
     },
     {
       type: 'doc',
-      id: 'showcase/index',
+      id: 'showcase/showcase',
       label: 'Showcase',
     },
     {
       type: 'doc',
-      id: 'resources/index',
+      id: 'resources/resources',
       label: 'Resources',
     },
   ],

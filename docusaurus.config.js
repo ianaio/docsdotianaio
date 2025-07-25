@@ -53,6 +53,13 @@ const config = {
         },
       ],
     },
+    algolia: {
+      appId: 'YOUR_APP_ID', // Replace with Algolia App ID
+      apiKey: 'YOUR_API_KEY', // Replace with Algolia Search API Key
+      indexName: 'YOUR_INDEX_NAME', // Replace with Algolia Index Name
+      contextualSearch: true,
+      searchPagePath: 'search',
+    },
     footer: {
       style: 'dark',
       links: [

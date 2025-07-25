@@ -5,11 +5,11 @@
   "author": "Jaroslaw Cichon <dev@iana.io>",
   "description": "IanaIO - documents, showcases, resources",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/ianaio/website/tree/docsianaio"
+    "type": "git",
+    "url": "https://github.com/ianaio/website/tree/docsianaio"
   },
   "bugs": {
-  "url": "https://github.com/ianaio/website/issues"
+    "url": "https://github.com/ianaio/website/issues"
   },
   "keywords": [
     "showcases",
@@ -57,4 +57,3 @@
     "node": ">=20.14.0"
   }
 }
-
