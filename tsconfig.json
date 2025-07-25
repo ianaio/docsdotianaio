@@ -1,9 +1,30 @@
 {
-    "extends": "@tsconfig/docusaurus/tsconfig.json",
-    "include": [
-        "src/"
-    ],
-    "compilerOptions": {
-        "jsx": "react"
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@site/*": ["*"]
     }
+  },
+  "include": [
+    "src/**/*",
+    "docusaurus.config.js",
+    "sidebars.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    ".docusaurus"
+  ]
 }
