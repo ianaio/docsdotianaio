@@ -28,12 +28,23 @@ const config = {
       logo: {
         alt: 'AI <3 IanaIO',
         src: 'img/ianaio-logo.webp',
+        href: 'https://docs.iana.io', // Logo links to homepage
       },
       items: [
         {
-          href: 'https://www.iana.io',
-          label: 'Home',
+          type: 'dropdown',
+          label: 'IanaIO Links',
           position: 'left',
+          items: [
+            {
+              label: 'IanaIO',
+              href: 'https://www.iana.io',
+            },
+            {
+              label: 'Security IanaIO',
+              href: 'https://security.iana.io',
+            },
+          ],
         },
         { to: '/technology', label: 'Technology', position: 'left' },
         { to: '/methodology', label: 'Methodology', position: 'left' },
