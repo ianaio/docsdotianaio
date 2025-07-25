@@ -1,8 +1,8 @@
 ---
 id: home
 title: About IanaIO Documentation
-slug: /home
-description: Overview of the IanaIO Documentation site, its purpose, and how to navigate it using the powerful search feature.
+slug: /
+description: Overview of the IanaIO Documentation site, its purpose, and how to navigate it.
 keywords:
   - documentation
   - ianaio
@@ -27,10 +27,14 @@ Our goal is to foster transparency and collaboration, making it easy to understa
 
 ## Search and Navigation
 
-Find what you need quickly with our **Algolia-powered search bar** in the navbar. It offers autocomplete and contextual results across all documentation pages, from crate APIs to project overviews.
+:::note
+Search functionality will be added soon with Algolia-powered search. For now, use the sidebar to navigate.
+:::
+
+Find what you need quickly using the sidebar to navigate through categories like [Projects](/projects/tech-corporate-credibility-test) and [Crates](/crates/ianaiorust), or explore specific pages like [Getting Started](/getting-started).
 
 :::tip Pro Tip
-Use the sidebar to navigate through categories like [Projects](/projects/tech-corporate-credibility-test) and [Crates](/), or type keywords like “Rust” or “SmartEditOS” in the search bar for instant results.
+Use the sidebar to navigate through categories like [Projects](/projects/tech-corporate-credibility-test) and [Crates](/crates/ianaiorust), or check the [Blog](/blog) for updates.
 :::
 
 ## Stay Updated

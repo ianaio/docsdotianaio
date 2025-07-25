@@ -1,5 +1,6 @@
-module.exports = {
-  mainSidebar: [
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+const sidebars = {
+  docs: [
     {
       type: 'doc',
       id: 'home',
@@ -17,7 +18,11 @@ module.exports = {
       type: 'category',
       label: 'Crates',
       items: [
-        'crates/ianaiorust',
+        {
+          type: 'doc',
+          id: 'crates/ianaiorust',
+          label: 'IanaIO Rust Crates',
+        },
       ],
     },
     {
@@ -45,5 +50,12 @@ module.exports = {
       id: 'resources/resources',
       label: 'Resources',
     },
+    {
+      type: 'doc',
+      id: 'getting-started',
+      label: 'Getting Started',
+    },
   ],
 };
+
+module.exports = sidebars;

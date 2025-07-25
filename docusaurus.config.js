@@ -22,7 +22,7 @@ const config = {
       defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: true,
-    }, 
+    },
     navbar: {
       title: 'IanaIO',
       logo: {
@@ -47,18 +47,11 @@ const config = {
           position: 'right',
         },
         {
-          href: 'https://discord.com/channels/1247475712001314857/1247475712001314860',
+          href: 'https://discord.com/channels/1247475712001314857/1247475712001315860',
           label: 'Discord',
           position: 'right',
         },
       ],
-    },
-    algolia: {
-      appId: 'YOUR_APP_ID', // Replace with Algolia App ID
-      apiKey: 'YOUR_API_KEY', // Replace with Algolia Search API Key
-      indexName: 'YOUR_INDEX_NAME', // Replace with Algolia Index Name
-      contextualSearch: true,
-      searchPagePath: 'search',
     },
     footer: {
       style: 'dark',
@@ -80,7 +73,7 @@ const config = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.com/channels/1247475712001314857/1247475712001314860',
+              href: 'https://discord.com/channels/1247475712001314857/1247475712001315860',
             },
           ],
         },
@@ -115,10 +108,13 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/ianaio/website/',
           routeBasePath: '/',
+          path: 'docs',
         },
         blog: {
           showReadingTime: true,
           editUrl: 'https://github.com/ianaio/website/',
+          onInlineAuthors: 'ignore',
+          onUntruncatedBlogPosts: 'ignore',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
