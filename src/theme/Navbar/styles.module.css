@@ -1,0 +1,43 @@
+.navbar__brand_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--ifm-z-index-fixed); /* Above other navbar elements */
+  display: flex;
+  align-items: center;
+  padding: 0 var(--ifm-navbar-padding-horizontal); /* Match navbar padding */
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: var(--ifm-navbar-padding-horizontal);
+  background-color: var(--ifm-navbar-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+  z-index: var(--ifm-z-index-dropdown);
+  min-width: 150px;
+  padding: 0.5rem 0;
+  margin-top: 0.25rem;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--ifm-navbar-link-color);
+  text-decoration: none;
+  font-size: var(--ifm-font-size-base);
+}
+
+.dropdownItem:hover {
+  background-color: var(--ifm-navbar-link-hover-background-color);
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+/* Disable hover on mobile/touch devices */
+@media (hover: none) {
+  .navbar__brand_wrapper:hover .dropdown {
+    display: none; /* Prevent hover dropdown on touch devices */
+  }
+}

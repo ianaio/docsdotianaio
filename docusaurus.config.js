@@ -24,28 +24,13 @@ const config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'IanaIO',
+      title: 'Docs IanaIO',
       logo: {
         alt: 'AI <3 IanaIO',
         src: 'img/ianaio-logo.webp',
-        href: 'https://docs.iana.io', // Logo links to homepage
+        href: 'https://docs.iana.io', // Links to homepage
       },
       items: [
-        {
-          type: 'dropdown',
-          label: 'IanaIO Links',
-          position: 'left',
-          items: [
-            {
-              label: 'IanaIO',
-              href: 'https://www.iana.io',
-            },
-            {
-              label: 'Security IanaIO',
-              href: 'https://security.iana.io',
-            },
-          ],
-        },
         { to: '/technology', label: 'Technology', position: 'left' },
         { to: '/methodology', label: 'Methodology', position: 'left' },
         { to: '/terminology', label: 'Terminology', position: 'left' },
