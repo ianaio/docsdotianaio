@@ -1,17 +1,7 @@
-.navbar__brand_wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: var(--ifm-z-index-fixed); /* Above other navbar elements */
-  display: flex;
-  align-items: center;
-  padding: 0 var(--ifm-navbar-padding-horizontal); /* Match navbar padding */
-}
-
 .dropdown {
   position: absolute;
   top: 100%;
-  left: var(--ifm-navbar-padding-horizontal);
+  left: 0;
   background-color: var(--ifm-navbar-background-color);
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: var(--ifm-global-radius);
@@ -37,7 +27,7 @@
 
 /* Disable hover on mobile/touch devices */
 @media (hover: none) {
-  .navbar__brand_wrapper:hover .dropdown {
+  .dropdown {
     display: none; /* Prevent hover dropdown on touch devices */
   }
 }
