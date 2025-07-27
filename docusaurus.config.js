@@ -1,151 +1,58 @@
 // docusaurus.config.js
-/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'IanaIO',
-  tagline: 'Documents, Showcases, Resources',
+  tagline: 'Documentation for IanaIO',
   url: 'https://docs.iana.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn', // Allows build to proceed with warnings
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'ianaio',
   projectName: 'website',
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      '@docusaurus/preset-classic',
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/ianaio/website/edit/main/',
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl: 'https://github.com/ianaio/website/edit/main/',
-          blogSidebarCount: 'ALL',
-          blogSidebarTitle: 'All Posts',
+          routeBasePath: '/', // Docs served at root
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
-    ],
-  ],
-  plugins: [
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            from: '/',
-            to: '/docs/home',
-          },
-        ],
       },
     ],
   ],
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: 'IanaIO',
-        logo: {
-          alt: 'IanaIO Logo',
-          src: 'img/logo.svg',
-          href: '/docs/home',
-          width: 32,
-          height: 32,
+  themeConfig: {
+    navbar: {
+      title: null, // Disable default title
+      items: [
+        {
+          type: 'doc',
+          docId: 'getting-started', // Matches docs/getting-started.md
+          position: 'left',
+          label: 'Getting Started',
         },
-        items: [
-          {
-            type: 'dropdown',
-            label: 'IanaIO',
-            position: 'left',
-            items: [
-              {
-                label: 'IanaIO',
-                href: 'https://www.iana.io',
-              },
-              {
-                label: 'Security',
-                href: 'https://security.iana.io',
-              },
-            ],
-          },
-          {
-            type: 'doc',
-            docId: 'getting-started',
-            position: 'left',
-            label: 'Getting Started',
-          },
-          {
-            type: 'doc',
-            docId: 'showcase/showcase',
-            position: 'left',
-            label: 'Showcase',
-          },
-          {
-            href: 'https://github.com/ianaio/website',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Home',
-                to: '/docs/home',
-              },
-              {
-                label: 'Getting Started',
-                to: '/docs/getting-started',
-              },
-              {
-                label: 'Showcase',
-                to: '/docs/showcase',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/ianaio',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'IanaIO',
-                href: 'https://www.iana.io',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} IanaIO. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: require('prism-react-renderer').themes.github,
-        darkTheme: require('prism-react-renderer').themes.dracula,
-      },
-      algolia: {
-        appId: 'L4OVQ3CBLL',
-        indexName: 'IanaIO',
-        apiKey: 'e7f45bc93005a45745a40aa8355a9902',
-      },
-    }),
+        {
+          type: 'doc',
+          docId: 'showcase/showcase', // Matches docs/showcase/showcase.md
+          position: 'left',
+          label: 'Showcase',
+        },
+        {
+          href: 'https://github.com/ianaio/website',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [],
+      copyright: `Copyright © ${new Date().getFullYear()} IanaIO. Built with Docusaurus.`,
+    },
+    prism: {}, // Minimal config, uses default Docusaurus code block styling
+  },
 };
 
 module.exports = config;

@@ -15,9 +15,9 @@ Access curated resources to deepen your understanding of IanaIO’s ecosystem.
 
 ## Key Resources
 
-- **[IanaIO Rust Crates](/docs/crates/ianaiorust)**: Documentation and APIs for our Rust toolkit.
+- **[IanaIO Rust Crates](/crates/ianaiorust)**: Documentation and APIs for our Rust toolkit.
 - **[GitHub Repository](https://github.com/ianaio/ianaio)**: Source code and contribution guidelines.
-- **[Getting Started](/docs/getting-started)**: A guide to using IanaIO’s tools.
+- **[Getting Started](/getting-started)**: A guide to using IanaIO’s tools.
 
 ## Latest Resources
 
@@ -29,4 +29,4 @@ Check our [Blog](/blog) for new tutorials and resources.
 
 ## Get Started
 
-Start exploring with the [Getting Started](/docs/getting-started) guide.
+Start exploring with the [Getting Started](/getting-started) guide.

@@ -3,23 +3,11 @@ module.exports = {
   docs: [
     {
       type: 'doc',
-      id: 'home',
-      label: 'Home',
-    },
-    {
-      type: 'doc',
       id: 'getting-started',
-      label: 'Getting Started',
     },
     {
       type: 'doc',
-      id: 'methodology/methodology',
-      label: 'Methodology',
-    },
-    {
-      type: 'doc',
-      id: 'terminology/terminology',
-      label: 'Terminology',
+      id: 'showcase/showcase',
     },
     {
       type: 'category',
@@ -27,13 +15,15 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'resources/resources',
-          label: 'Resources',
+          id: 'crates/ianaiorust',
         },
         {
           type: 'doc',
-          id: 'resources/resources-overview',
-          label: 'Resources Overview',
+          id: 'resources/resources',
+        },
+        {
+          type: 'doc',
+          id: 'resources/resources-overview', // Fixed from resources/index
         },
       ],
     },
@@ -43,53 +33,33 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'technology/technology',
-          label: 'Technology',
+          id: 'projects/tech-corporate-credibility-test',
         },
-        {
-          type: 'doc',
-          id: 'technology/technology-overview',
-          label: 'Technology Overview',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Crates',
-      items: [
-        {
-          type: 'doc',
-          id: 'crates/ianaiorust',
-          label: 'IanaIO Rust',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Projects',
-      items: [
         {
           type: 'doc',
           id: 'projects/smarteditos-developer-ux-layer',
-          label: 'Smarteditos Developer UX Layer',
         },
         {
           type: 'doc',
-          id: 'projects/tech-corporate-credibility-test',
-          label: 'Tech Corporate Credibility Test',
+          id: 'technology/technology',
+        },
+        {
+          type: 'doc',
+          id: 'technology/technology-overview', // Fixed from technology/index
         },
       ],
     },
     {
-      type: 'category',
-      label: 'Showcase',
-      items: [
-        {
-          type: 'doc',
-          id: 'showcase/showcase',
-          label: 'Showcase',
-        },
-      ],
+      type: 'doc',
+      id: 'terminology/terminology',
+    },
+    {
+      type: 'doc',
+      id: 'methodology/methodology',
+    },
+    {
+      type: 'doc',
+      id: 'home',
     },
   ],
 };
