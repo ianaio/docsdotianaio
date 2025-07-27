@@ -1,42 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useThemeConfig } from '@docusaurus/theme-common';
-import { useHistory } from '@docusaurus/router';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import NavbarItem from '@theme/NavbarItem';
+// src/theme/Navbar/index.js
+import React, { useState, useRef } from 'react';
+import Navbar from '@theme-original/Navbar';
+import { useColorMode } from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 
-function CustomNavbar() {
-  const { navbar } = useThemeConfig();
-  const { logo, title, items } = navbar;
-  const logoSrc = useBaseUrl(logo.src);
+export default function NavbarWrapper(props) {
+  const { colorMode, setColorMode } = useColorMode();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobileOpen, setMobileOpen] = useState(false);
-  const navbarRef = useRef(null);
   const dropdownRef = useRef(null);
-  const history = useHistory();
   let timeoutId = null;
 
+  // Dropdown items
   const dropdownItems = [
     { label: 'IanaIO', href: 'https://www.iana.io' },
     { label: 'Security', href: 'https://security.iana.io' },
   ];
 
-  // Ensure navbar is ready for Docusaurus measurements
-  useEffect(() => {
-    if (navbarRef.current) {
-      navbarRef.current.getBoundingClientRect(); // Force layout recalculation
-    }
-  }, []);
-
-  // Force re-render after hydration
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsDropdownOpen((prev) => prev); // Trigger re-render
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Handle mouse enter/leave with timeout
+  // Handle mouse enter/leave for dropdown
   const handleMouseEnter = () => {
     if (timeoutId) clearTimeout(timeoutId);
     setIsDropdownOpen(true);
@@ -44,7 +24,7 @@ function CustomNavbar() {
   const handleMouseLeave = () => {
     timeoutId = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 200); // Delay to allow moving to dropdown
+    }, 200);
   };
   const handleDropdownMouseEnter = () => {
     if (timeoutId) clearTimeout(timeoutId);
@@ -56,50 +36,22 @@ function CustomNavbar() {
     }, 200);
   };
 
-  // Handle tap for mobile
-  const handleMobileToggle = () => {
-    setMobileOpen((prev) => !prev);
-    setIsDropdownOpen((prev) => !prev);
-  };
-
-  // Handle logo click for client-side routing
-  const handleLogoClick = () => {
-    if (history.location.pathname !== '/') {
-      history.push('/');
-    }
+  // Toggle theme
+  const toggleTheme = () => {
+    setColorMode(colorMode === 'dark' ? 'light' : 'dark');
   };
 
   return (
-    <nav className="navbar navbar--fixed-top" ref={navbarRef}>
-      <div className="navbar__inner">
+    <div className="navbar-wrapper">
+      <Navbar {...props} />
+      <div className="navbar__items navbar__items--right">
         <div
-          className="navbar__brand"
+          className="navbar__item"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          onClick={handleMobileToggle}
         >
-          <div
-            className="navbar__logo"
-            onClick={handleLogoClick}
-            style={{ cursor: 'pointer' }}
-          >
-            <img
-              src={logoSrc}
-              alt={logo.alt}
-              width={logo.width}
-              height={logo.height}
-            />
-          </div>
-          {title && (
-            <div
-              className="navbar__title text--truncate"
-              onClick={handleLogoClick}
-              style={{ cursor: 'pointer' }}
-            >
-              {title}
-            </div>
-          )}
-          {(isDropdownOpen || isMobileOpen) && (
+          <span className="navbar__link">Explore</span>
+          {isDropdownOpen && (
             <div
               className={styles.dropdown}
               ref={dropdownRef}
@@ -111,10 +63,7 @@ function CustomNavbar() {
                   key={index}
                   className={styles.dropdownItem}
                   href={item.href}
-                  onClick={() => {
-                    setIsDropdownOpen(false);
-                    setMobileOpen(false);
-                  }}
+                  onClick={() => setIsDropdownOpen(false)}
                 >
                   {item.label}
                 </a>
@@ -122,23 +71,14 @@ function CustomNavbar() {
             </div>
           )}
         </div>
-        <div className="navbar__items">
-          {items
-            .filter((item) => item.position !== 'right')
-            .map((item, index) => (
-              <NavbarItem {...item} key={index} />
-            ))}
-        </div>
-        <div className="navbar__items navbar__items--right">
-          {items
-            .filter((item) => item.position === 'right')
-            .map((item, index) => (
-              <NavbarItem {...item} key={index} />
-            ))}
-        </div>
+        <button
+          className={styles.themeToggle}
+          onClick={toggleTheme}
+          title={`Switch to ${colorMode === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          {colorMode === 'dark' ? '🌞' : '🌙'}
+        </button>
       </div>
-    </nav>
+    </div>
   );
 }
-
-export default CustomNavbar;

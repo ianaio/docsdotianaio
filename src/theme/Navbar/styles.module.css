@@ -1,3 +1,4 @@
+/* src/theme/Navbar/styles.module.css */
 .dropdown {
   position: absolute;
   top: 100%;
@@ -6,7 +7,7 @@
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-md);
-  z-index: 1000; /* High z-index to ensure clickability */
+  z-index: 1000;
   min-width: 150px;
   padding: 0.5rem 0;
   margin-top: 0.25rem;
@@ -25,7 +26,28 @@
   color: var(--ifm-navbar-link-hover-color);
 }
 
-/* Ensure dropdown is clickable on mobile */
+.themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0 1rem;
+  color: var(--ifm-navbar-link-color);
+  display: flex;
+  align-items: center;
+}
+
+.themeToggle:hover {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.docSearch {
+  margin: 0 0.5rem;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+}
+
 @media (hover: none) {
   .dropdown {
     position: static;
@@ -33,6 +55,6 @@
     border: none;
     box-shadow: none;
     background-color: var(--ifm-background-surface-color);
-    z-index: auto; /* Reset z-index for mobile */
+    z-index: auto;
   }
 }
