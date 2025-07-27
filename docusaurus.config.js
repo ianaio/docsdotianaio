@@ -58,10 +58,19 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'home',
+            type: 'dropdown',
+            label: 'IanaIO',
             position: 'left',
-            label: 'Home',
+            items: [
+              {
+                label: 'IanaIO',
+                href: 'https://www.iana.io',
+              },
+              {
+                label: 'Security',
+                href: 'https://security.iana.io',
+              },
+            ],
           },
           {
             type: 'doc',
