@@ -1,5 +1,5 @@
 // src/theme/Navbar/index.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import styles from './styles.module.css';
 
 function NavbarWrapper() {
@@ -11,17 +11,17 @@ function NavbarWrapper() {
     return () => console.log('NavbarWrapper unmounted', Date.now());
   }, []);
 
-  const handlePointerEnter = (e) => {
-    console.log(`Pointer enter on ${e.target.className}`);
+  const handlePointerEnter = useCallback((e) => {
+    console.log(`Pointer enter on ${e.currentTarget.className}`);
     setIsDropdownVisible(true);
     console.log('Dropdown state changed: true');
-  };
+  }, []);
 
-  const handlePointerLeave = (e) => {
-    console.log(`Pointer leave on ${e.target.className}`);
+  const handlePointerLeave = useCallback((e) => {
+    console.log(`Pointer leave on ${e.currentTarget.className}`);
     setIsDropdownVisible(false);
     console.log('Dropdown state changed: false');
-  };
+  }, []);
 
   return (
     <div
@@ -47,6 +47,8 @@ function NavbarWrapper() {
         className={`${styles.dropdown} ${
           isDropdownVisible ? styles.dropdownVisible : ''
         }`}
+        onPointerEnter={handlePointerEnter}
+        onPointerLeave={handlePointerLeave}
       >
         <a href="https://www.iana.io" onClick={() => console.log('Clicked IanaIO')}>
           IanaIO
