@@ -1,11 +1,58 @@
 /* src/css/custom.css */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #6534ff; /* Primary color */
+  --ifm-color-primary-dark: #5b2ee6; /* Darker shade */
+  --ifm-color-primary-darker: #5128cc; /* Even darker */
+  --ifm-color-primary-darkest: #4622b3; /* Darkest shade */
+  --ifm-color-primary-light: #7f5aff; /* Lighter shade */
+  --ifm-color-primary-lighter: #8c6bff; /* Even lighter */
+  --ifm-color-primary-lightest: #a68cff; /* Lightest shade */
   --ifm-code-font-size: 95%;
+}
+
+.navbar__explore-button {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-left: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.navbar__explore-button:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+/* Style for the color mode toggle */
+.navbar__color-mode-toggle {
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* Ensure only one icon is visible based on the theme */
+[data-theme='light'] .navbar__color-mode-toggle .navbar__color-mode-toggle-icon::before {
+  content: '🌙';
+}
+
+[data-theme='dark'] .navbar__color-mode-toggle .navbar__color-mode-toggle-icon::before {
+  content: '☀️';
+}
+
+/* Hide any default or conflicting icons */
+.navbar__color-mode-toggle svg,
+.navbar__color-mode-toggle .iconLightToggle,
+.navbar__color-mode-toggle .iconDarkToggle {
+  display: none !important;
+}
+
+/* Ensure the custom icon is visible */
+.navbar__color-mode-toggle .navbar__color-mode-toggle-icon {
+  display: inline-block;
 }

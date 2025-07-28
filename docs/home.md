@@ -1,9 +1,8 @@
-
-**`docs/getting-started.md`**
-```markdown
 ---
-id: getting-started
-title: Getting Started
+id: home
+title: Welcome to Docs IanaIO
+slug: /
 ---
+Welcome to the official documentation for IanaIO. Explore our resources, guides, and more to get started!
 
-Welcome to IanaIO! This guide helps you get started with our toolkit.
+[Get Started](/getting-started)
